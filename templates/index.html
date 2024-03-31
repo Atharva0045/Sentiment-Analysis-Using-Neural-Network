@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>News Headline Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News Headline Analyzer</h1>
+        <form method="post" action="/">
+            <div>
+                <input type="text" placeholder="Enter News Headline" name="headline" required>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            {% if result %}
+                <div class="result">
+                    <p>The predicted sentiment is: {{ result }}</p>
+                </div>
+            {% endif %}
+        </form>
+        <div class="note">
+            <p>Note: Please enter only technological-related headlines or statements for accurate analysis.</p>
+        </div>
+    </div>
+</body>
+</html>
