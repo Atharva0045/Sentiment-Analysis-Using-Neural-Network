@@ -1,10 +1,12 @@
 # Sentiment-Analysis-Using-Neural-Network
 
 * Title:
+
   Sentiment Analysis Using Neural Network
 
 * Discription:
- A full-stack web application for analyzing the sentiment of news headlines using machine learning techniques. The application allows users to input news headlines and receive predictions on whether the sentiment is neutral, positive, or negative.
+
+  A full-stack web application for analyzing the sentiment of news headlines using machine learning techniques. The application allows users to input news headlines and receive predictions on whether the sentiment is neutral, positive, or negative.
 
 * Functionality:
   * Developed a web-based interface using HTML, CSS, and Flask, providing a user-friendly platform for inputting news headlines.
