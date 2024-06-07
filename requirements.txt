@@ -1,0 +1,6 @@
+Flask
+numpy
+pickle
+render_template
+request
+Gunicorn
