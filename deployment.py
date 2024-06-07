@@ -33,3 +33,7 @@ def predict_sentiment(headline):
     predicted_sentiment = sentiment_labels[np.argmax(prediction)]
     
     return predicted_sentiment
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
