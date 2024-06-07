@@ -1,5 +1,4 @@
 Flask
 numpy
-pickle
 keras
 tensorflow
