@@ -1,5 +1,5 @@
 Flask
 numpy
+pickle
 keras
 tensorflow
-Gunicorn
