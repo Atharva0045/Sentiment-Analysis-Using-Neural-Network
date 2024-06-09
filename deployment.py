@@ -35,5 +35,5 @@ def predict_sentiment(headline):
     return predicted_sentiment
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
