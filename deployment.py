@@ -8,8 +8,11 @@ app = Flask(__name__)
 model_filename = 'savemodel.sav'
 vectorizer_filename = 'vectorizer.pkl'
 
-loaded_model = pickle.load(open(model_filename, 'rb'))
-loaded_vectorizer = pickle.load(open(vectorizer_filename, 'rb'))
+with open('savemodel.sav', 'rb') as m:
+    loaded_model = pickle.load(m);
+
+with open('vectorizer.pkl', 'rb') as f:
+    loaded_vectorizer = pickle.load(f)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -35,5 +38,5 @@ def predict_sentiment(headline):
     return predicted_sentiment
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
