@@ -1,15 +1,14 @@
 from flask import Flask, render_template, request
+import tensorflow as tf
 import pickle
 import numpy as np
 
 app = Flask(__name__)
 
 # Load the pre-trained ML model and vectorizer
-model_filename = 'savemodel.sav'
 vectorizer_filename = 'vectorizer.pkl'
 
-with open('savemodel.sav', 'rb') as m:
-    loaded_model = pickle.load(m);
+loaded_model = tf.keras.models.load_model('model.h5')
 
 with open('vectorizer.pkl', 'rb') as f:
     loaded_vectorizer = pickle.load(f)
@@ -38,5 +37,5 @@ def predict_sentiment(headline):
     return predicted_sentiment
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
