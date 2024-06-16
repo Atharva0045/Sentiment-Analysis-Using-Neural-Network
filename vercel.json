@@ -1,9 +1,20 @@
 {
     "version": 2,
     "builds": [
-        {"src": "deployment.py", "use": "@vercel/python"}
+        {
+            "src": "deployment.py",
+            "use": "@vercel/python"
+        }
     ],
+    "functions": {
+        "deployment.py": {
+            "runtime": "python3.11"
+        }
+    },
     "routes": [
-        {"src": "/(.*)", "dest": "deployment.py"}
+        {
+            "src": "/(.*)",
+            "dest": "deployment.py"
+        }
     ]
 }
