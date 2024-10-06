@@ -6,11 +6,11 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the pre-trained ML model and vectorizer
-vectorizer_filename = 'vectorizer.pkl'
+vectorizer_filename = 'Helpers/vectorizer.pkl'
 
-loaded_model = tf.keras.models.load_model('model.h5')
+loaded_model = tf.keras.models.load_model('Models/model.h5')
 
-with open('vectorizer.pkl', 'rb') as f:
+with open(vectorizer_filename, 'rb') as f:
     loaded_vectorizer = pickle.load(f)
 
 @app.route('/', methods=['GET', 'POST'])
