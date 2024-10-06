@@ -48,11 +48,24 @@
             background-color: #ffffff;
             color: #000000;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         .result {
-            margin-top: 20px;
+            margin-top: 5px;
+            min-height: 10px; /* Set a minimum height to prevent shifting */
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            visibility: hidden; /* Hide the result area initially */
+        }
+
+        .result.show {
+            visibility: visible; /* Make it visible when result is available */
         }
 
         .note {
@@ -71,11 +84,13 @@
             <div>
                 <button type="submit">Submit</button>
             </div>
-            {% if result %}
-                <div class="result">
+            <div class="result {% if result %}show{% endif %}">
+                {% if result %}
                     <p>The predicted sentiment is: {{ result }}</p>
-                </div>
-            {% endif %}
+                {% else %}
+                    <p>No result yet.</p>
+                {% endif %}
+            </div>
         </form>
         <div class="note">
             <p>Note: Please enter only technological-related headlines or statements for accurate analysis.</p>
